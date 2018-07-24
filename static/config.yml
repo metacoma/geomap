@@ -33,7 +33,7 @@ properties:
   fields: 
     5065: 
       lookup: 
-        1: Pedestrian
+        1: none
     5074: 
       lookup: 
         1: Successfull
