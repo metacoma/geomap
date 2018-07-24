@@ -1,0 +1,15 @@
+type: FeatureCollection
+features: 
+{% for location in locations %} 
+  {% for category in location.categories  %} 
+    {% for n in range(1, category.count) %} 
+  - geometry: 
+      type: Point
+      coordinates: [ {{ location.geo[0] }}, {{ location.geo[1] }} ] 
+    type: Feature
+    properties: 
+      5065: {{ category.type }}
+      5074: {{ category.type }}
+    {% endfor %}
+  {% endfor %}
+{% endfor %}
