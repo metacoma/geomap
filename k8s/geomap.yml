@@ -1,0 +1,32 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: geomap-web
+  labels:
+    app: geomap-web
+spec:
+  template:
+    metadata:
+      labels:
+        app: geomap-web
+    spec:
+      containers:
+      - name: geomap-web
+        image: "metacoma/geomap:latest"
+        imagePullPolicy: Always
+---
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: geomap-web
+  labels:
+    app: geomap-web
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: geomap-web
