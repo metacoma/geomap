@@ -161,6 +161,7 @@
     rmax = 30, //Maximum radius for cluster pies
     markerclusters = L.markerClusterGroup({
       maxClusterRadius: 2*rmax,
+			zoomToBoundsOnClick: false,
       iconCreateFunction: defineClusterIcon //this is where the magic happens
     }),
     map = L.map('map').setView([59.95, 10.78], 8);
@@ -279,6 +280,8 @@ function bakeThePie(options) {
         .attr('class', pieClass)
         .attr('width', w)
         .attr('height', h);
+
+		d3.select(svg).on("click", function(d) { alert(d) });
         
     var arcs = vis.selectAll('g.arc')
         .data(donut.value(valueFunc))
