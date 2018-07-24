@@ -1,0 +1,44 @@
+locations: 
+  # CA
+  - geo: [ -120.79, 37.193 ]
+    categories: 
+      - type: 1
+        count: 42
+      - type: 2
+        count: 13
+      - type: 3
+        count: 7
+
+  # LA 
+  - geo: [ -118.79, 34.193 ]
+    categories: 
+      - type: 1
+        count: 80
+      - type: 2
+        count: 47
+      - type: 3
+        count: 116
+
+  # NY
+  - geo: [ -74.79, 40.193 ]
+    categories: 
+      - type: 1
+        count: 219
+      - type: 2
+        count: 40
+      - type: 3
+        count: 28
+
+properties:
+  fields: 
+    5065: 
+      lookup: 
+        1: Pedestrian
+    5074: 
+      lookup: 
+        1: Successfull
+        2: In progress
+        3: Failed
+      name: Deployments
+  attribution: Deployments
+  description: Deployments information

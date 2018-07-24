@@ -2,7 +2,7 @@ type: FeatureCollection
 features: 
 {% for location in locations %} 
   {% for category in location.categories  %} 
-    {% for n in range(1, category.count) %} 
+    {% for n in range(0, category.count) %} 
   - geometry: 
       type: Point
       coordinates: [ {{ location.geo[0] }}, {{ location.geo[1] }} ] 
