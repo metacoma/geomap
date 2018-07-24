@@ -166,6 +166,11 @@ html,body,#map,#container {
       iconCreateFunction: defineClusterIcon //this is where the magic happens
     }),
     map = L.map('map').setView([50.253, 50.002], 2);
+
+		markerclusters.on('clusterclick', function (a) {
+								//alert('cluster ' + a.layer.getAllChildMarkers().length);
+								window.open('http://cd.varian360.aptomi.io');
+		});
     
   //Add basemap
   L.tileLayer(tileServer, {attribution: tileAttribution,  maxZoom: 15}).addTo(map);
@@ -180,14 +185,15 @@ html,body,#map,#container {
           var markers = L.geoJson(geojson, {
 			pointToLayer: defineFeature,
 			onEachFeature: defineFeaturePopup
-          });
+					});
           markerclusters.addLayer(markers);
           map.fitBounds(markers.getBounds());
           map.attributionControl.addAttribution(metadata.attribution);
           renderLegend();
 					map.setView([35.253, -102.002], 5);
+
       } else {
-	  console.log('Could not load data...');
+				console.log('Could not load data...');
       }
   });
 
@@ -283,8 +289,6 @@ function bakeThePie(options) {
         .attr('width', w)
         .attr('height', h);
 
-		d3.select(svg).on("click", function(d) { alert(d) });
-        
     var arcs = vis.selectAll('g.arc')
         .data(donut.value(valueFunc))
         .enter().append('svg:g')
@@ -331,6 +335,7 @@ function renderLegend() {
         .classed({'legenditem': true})
         .text(function(d){return d.value;});
 }
+
 
 /*Helper function*/
 function serializeXmlNode(xmlNode) {
