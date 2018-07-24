@@ -164,7 +164,7 @@ html,body,#map,#container {
 			zoomToBoundsOnClick: false,
       iconCreateFunction: defineClusterIcon //this is where the magic happens
     }),
-    map = L.map('map').setView([59.95, 10.78], 8);
+    map = L.map('map').setView([50.253, 50.002], 2);
     
   //Add basemap
   L.tileLayer(tileServer, {attribution: tileAttribution,  maxZoom: 15}).addTo(map);
@@ -184,6 +184,7 @@ html,body,#map,#container {
           map.fitBounds(markers.getBounds());
           map.attributionControl.addAttribution(metadata.attribution);
           renderLegend();
+					map.setView([35.253, -102.002], 5);
       } else {
 	  console.log('Could not load data...');
       }
