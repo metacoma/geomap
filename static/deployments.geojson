@@ -50,12 +50,9 @@
         "lookup": {
           "1": "Successfull",
           "2": "In progress",
-          "3": "Failed",
-          "5": "No injuries",
-          "4": "Minor injuries",
-          "6": "Not recorded"
+          "3": "Failed"
         },
-        "name": "Injuries"
+        "name": "Deployments"
       }
     },
     "attribution": "Traffic accidents: <a href=\"http://data.norge.no/data/nasjonal-vegdatabank-api\" target=\"blank\">NVDB</a>",
