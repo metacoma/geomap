@@ -165,7 +165,8 @@ html,body,#map,#container {
 			zoomToBoundsOnClick: false,
       iconCreateFunction: defineClusterIcon //this is where the magic happens
     }),
-    map = L.map('map').setView([50.253, 50.002], 2);
+
+    map = L.map('map');
 
 		markerclusters.on('clusterclick', function (a) {
 								//alert('cluster ' + a.layer.getAllChildMarkers().length);
@@ -190,7 +191,8 @@ html,body,#map,#container {
           map.fitBounds(markers.getBounds());
           map.attributionControl.addAttribution(metadata.attribution);
           renderLegend();
-					map.setView([35.253, -102.002], 5);
+					//map.setView([35.253, -102.002], 5);
+					map.setView([51.253, 43.002], 2);
 
       } else {
 				console.log('Could not load data...');
