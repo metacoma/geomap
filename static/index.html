@@ -161,7 +161,7 @@ html,body,#map,#container {
     tileAttribution = 'Map data: <a href="http://openstreetmap.org">OSM</a>',
     rmax = 30, //Maximum radius for cluster pies
     markerclusters = L.markerClusterGroup({
-      maxClusterRadius: 2*rmax,
+      maxClusterRadius: 10,
 			zoomToBoundsOnClick: false,
       iconCreateFunction: defineClusterIcon //this is where the magic happens
     }),
@@ -170,7 +170,7 @@ html,body,#map,#container {
 
 		markerclusters.on('clusterclick', function (a) {
 								//alert('cluster ' + a.layer.getAllChildMarkers().length);
-								window.open('http://cd.varian360.aptomi.io');
+								window.open('http://google.com');
 		});
     
   //Add basemap
